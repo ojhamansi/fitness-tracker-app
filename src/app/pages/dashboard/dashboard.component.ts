@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { GeminiService } from '../../services/gemini.service';
 import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatDividerModule
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

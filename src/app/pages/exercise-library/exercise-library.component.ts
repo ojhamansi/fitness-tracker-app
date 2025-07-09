@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ExerciseService, Exercise } from '../../services/exercise.service';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-exercise-library',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatListModule
+  ],
   templateUrl: './exercise-library.component.html',
   styleUrl: './exercise-library.component.scss'
 })

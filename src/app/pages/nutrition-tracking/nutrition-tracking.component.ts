@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NutritionService, Nutrition } from '../../services/nutrition.service';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-nutrition-tracking',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    MatCardModule
+  ],
   templateUrl: './nutrition-tracking.component.html',
   styleUrl: './nutrition-tracking.component.scss'
 })

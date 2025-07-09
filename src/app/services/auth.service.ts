@@ -28,10 +28,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined' && !!window.localStorage;
+  }
+
   login(data: LoginRequest): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, data).pipe(
       tap((res: any) => {
-        if (res && res.token) {
+        if (res && res.token && this.isBrowser()) {
           localStorage.setItem(this.tokenKey, res.token);
           this.loggedIn.next(true);
         }
@@ -44,7 +48,9 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem(this.tokenKey);
+    if (this.isBrowser()) {
+      localStorage.removeItem(this.tokenKey);
+    }
     this.loggedIn.next(false);
   }
 
@@ -53,10 +59,16 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+    if (this.isBrowser()) {
+      return localStorage.getItem(this.tokenKey);
+    }
+    return null;
   }
 
   private hasToken(): boolean {
-    return !!localStorage.getItem(this.tokenKey);
+    if (this.isBrowser()) {
+      return !!localStorage.getItem(this.tokenKey);
+    }
+    return false;
   }
 }

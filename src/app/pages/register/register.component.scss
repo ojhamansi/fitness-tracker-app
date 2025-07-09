@@ -1,0 +1,41 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.mat-card {
+  padding: 32px 24px 24px 24px;
+  background: linear-gradient(135deg, #f3e7ff 0%, #e3f0ff 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(60,60,120,0.10);
+}
+
+.mat-card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3f51b5;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.mat-form-field {
+  margin-bottom: 18px;
+}
+
+button[type="submit"] {
+  margin-top: 18px;
+  width: 100%;
+  background: linear-gradient(90deg, #3f51b5 0%, #e040fb 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px 0 rgba(60,60,120,0.10);
+}
+
+.error {
+  color: #e53935;
+  margin-top: 8px;
+  text-align: center;
+}

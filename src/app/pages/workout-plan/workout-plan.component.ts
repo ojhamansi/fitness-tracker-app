@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkoutService, WorkoutPlan } from '../../services/workout.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-workout-plan',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatListModule
+  ],
   templateUrl: './workout-plan.component.html',
   styleUrl: './workout-plan.component.scss'
 })
