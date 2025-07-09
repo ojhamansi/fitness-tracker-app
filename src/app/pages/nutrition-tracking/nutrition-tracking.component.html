@@ -1,0 +1,9 @@
+<p>nutrition-tracking works!</p>
+<mat-card *ngIf="nutrition">
+  <mat-card-title>Nutrition Tracking</mat-card-title>
+  <div>Date: {{ nutrition.date }}</div>
+  <div>Calories: {{ nutrition.calories }}</div>
+  <div>Protein: {{ nutrition.protein }}g</div>
+  <div>Carbs: {{ nutrition.carbs }}g</div>
+  <div>Fats: {{ nutrition.fats }}g</div>
+</mat-card>

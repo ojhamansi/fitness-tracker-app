@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-title>Exercise Library</mat-card-title>
+  <mat-list>
+    <mat-list-item *ngFor="let ex of exercises">
+      <div>{{ ex.name }} ({{ ex.muscleGroup }}) - {{ ex.difficulty }}</div>
+      <div>{{ ex.description }}</div>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
